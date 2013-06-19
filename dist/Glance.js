@@ -1,11 +1,12 @@
-/*! Glance - v0.0.1 - 2013-04-17
+/*! Glance - v0.0.1 - 2013-06-18
 * Copyright (c) 2013 Matthew Teece; Licensed  */
 var Glance = (function() {
 	var ds = window.localStorage, methods;
 	
-	function Glance() {
-		this.storage = 'store';
-		this.data = { 'entries': [] };
+	function Glance(options) {
+		var options = options || {};
+		this.storage =  options.storage || 'store';
+		this.data = options.data || { 'entries': [] };
 		if (window.localStorage && window.JSON) {
 			var retrievedObject = localStorage.getItem(this.storage);
 			if(retrievedObject) {

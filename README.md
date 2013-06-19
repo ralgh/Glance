@@ -72,6 +72,14 @@ g.save({title: 'The Happiness Project', description:'A book about happiness.'});
 g.select({title: 'The Happiness Project'});
 ```
 
+Optionally an options object can be passed in to override the default settings:
+
+```javascript
+g = new Glance({
+	storage: 'myStoreName'
+});
+```
+
 Functions:
 
 * Save()

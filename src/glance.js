@@ -7,9 +7,10 @@
 var Glance = (function() {
 	var ds = window.localStorage, methods;
 	
-	function Glance() {
-		this.storage = 'store';
-		this.data = { 'entries': [] };
+	function Glance(options) {
+		var options = options || {};
+		this.storage =  options.storage || 'store';
+		this.data = options.data || { 'entries': [] };
 		if (window.localStorage && window.JSON) {
 			var retrievedObject = localStorage.getItem(this.storage);
 			if(retrievedObject) {
